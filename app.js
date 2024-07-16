@@ -3,6 +3,7 @@
 import express from "express"; // Import Express framework
 import dotenv from "dotenv"; // Import dotenv for loading environment variables
 import fetch from "node-fetch"; // Import node-fetch for making HTTP requests
+import { steam_link } from "./config.js";
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -16,13 +17,11 @@ app.use(express.static("public")); // Serve static files from the 'public' direc
 app.get("/random-game", async (req, res) => {
   try {
     // Fetch the list of all games from Steam API
-    const response = await fetch(
-      `https://api.steampowered.com/ISteamApps/GetAppList/v2/`
-    );
+    const response = await fetch(steam_link);
     const data = await response.json(); // Parse the response as JSON
     const games = data.applist.apps; // Get the list of games from the response
     const randomGame = games[Math.floor(Math.random() * games.length)]; // Select a random game
-    res.json(randomGame); // Send the random game as a JSON response
+    res.json(games); // Send the random game as a JSON response
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch game list" }); // Handle errors by sending a 500 status
   }
