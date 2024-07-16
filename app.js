@@ -20,6 +20,7 @@ app.get("/random-game", async (req, res) => {
       `https://api.steampowered.com/ISteamApps/GetAppList/v2/`
     );
     const data = await response.json(); // Parse the response as JSON
+    console.log(data);
     const games = data.applist.apps; // Get the list of games from the response
     const randomGame = games[Math.floor(Math.random() * games.length)]; // Select a random game
     res.json(randomGame); // Send the random game as a JSON response
