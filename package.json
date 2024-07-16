@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.18.1",
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^3.0.0",
+    "vercel": "^35.0.0"
   }
 }
