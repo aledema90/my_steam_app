@@ -1,6 +1,8 @@
 // Import the necessary modules
 
 import express from "express";
+import dotenv from "dotenv";
+import fetch from "node-fetch";
 //const express = require("express"); // Import Express framework
 // const fetch = require("node-fetch"); // Import node-fetch for making HTTP requests
 // const dotenv = require("dotenv"); // Import dotenv for loading environment variables
