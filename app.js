@@ -21,7 +21,7 @@ app.get("/random-game", async (req, res) => {
     const data = await response.json(); // Parse the response as JSON
     const games = data.applist.apps; // Get the list of games from the response
     const randomGame = games[Math.floor(Math.random() * games.length)]; // Select a random game
-    res.json(games); // Send the random game as a JSON response
+    res.json(randomGame); // Send the random game as a JSON response
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch game list" }); // Handle errors by sending a 500 status
   }
