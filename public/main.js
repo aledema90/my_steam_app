@@ -18,7 +18,7 @@ document.getElementById("get-all-games").addEventListener("click", async () => {
     const response = await fetch("/games");
 
     // Parse the response as JSON
-    const data = response.json();
+    const data = await response.json();
 
     // extract the list of games from the response
     const allGames = data.applist.apps;
