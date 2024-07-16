@@ -1,16 +1,13 @@
 // Import the necessary modules
 
-import express from "express";
-import dotenv from "dotenv";
-import fetch from "node-fetch";
-//const express = require("express"); // Import Express framework
-// const fetch = require("node-fetch"); // Import node-fetch for making HTTP requests
-// const dotenv = require("dotenv"); // Import dotenv for loading environment variables
+import express from "express"; // Import Express framework
+import dotenv from "dotenv"; // Import dotenv for loading environment variables
+import fetch from "node-fetch"; // Import node-fetch for making HTTP requests
 
 dotenv.config(); // Load environment variables from .env file
 
 const app = express(); // Create an instance of Express
-const port = 3000; // Define the port on which the server will run
+const port = process.env.PORT || 3000; // Define the port on which the server will run or use the PORT environment variable if available
 const STEAM_API_KEY = process.env.STEAM_API_KEY; // Get the Steam API key from environment variables
 
 app.use(express.static("public")); // Serve static files from the 'public' directory
