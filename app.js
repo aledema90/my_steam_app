@@ -1,7 +1,7 @@
 // Import the necessary modules
 
 import express from "express"; // Import Express framework
-import dotenv from "dotenv"; // Import dotenv for loading environment variables
+// import dotenv from "dotenv"; // Import dotenv for loading environment variables
 import fetch from "node-fetch"; // Import node-fetch for making HTTP requests
 import { steamLink } from "./config.js";
 
