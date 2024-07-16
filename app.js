@@ -5,7 +5,7 @@ import express from "express"; // Import Express framework
 import fetch from "node-fetch"; // Import node-fetch for making HTTP requests
 import { steamLink } from "./config.js";
 
-dotenv.config(); // Load environment variables from .env file
+// dotenv.config(); // Load environment variables from .env file
 
 const app = express(); // Create an instance of Express
 const port = process.env.PORT || 3000; // Define the port on which the server will run or use the PORT environment variable if available
