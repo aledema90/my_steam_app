@@ -12,7 +12,11 @@
   ],
   "routes": [
     {
-      "src": ["/random-game", "/games"],
+      "src": "/random-game",
+      "dest": "app.js"
+    },
+    {
+      "src": "/games",
       "dest": "app.js"
     },
     {
