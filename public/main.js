@@ -21,7 +21,10 @@ document.getElementById("get-all-games").addEventListener("click", async () => {
     const data = await response.json();
 
     // extract the list of games from the response
-    const allGames = data.applist.apps;
+    // const allGames = data.applist.apps;
+    const allGames = data.applist.apps.filter(
+      (game) => game.name.trim() !== ""
+    );
 
     // log the entire response in the console
     console.log(allGames);
