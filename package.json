@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "vercel-build": "npm run build:css && echo 'no build step required'",
-    "build:css": "tailwindcss -i ./public/input.css -o ./public/style.css --watch"
+    "vercel-build": "echo 'Build step completed'"
   },
   "dependencies": {
     "express": "^4.18.1",
