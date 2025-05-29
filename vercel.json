@@ -17,11 +17,11 @@
     },
     {
       "src": "/random-game",
-      "dest": "app.js"
+      "dest": "/app.js"
     },
     {
       "src": "/games",
-      "dest": "app.js"
+      "dest": "/app.js"
     },
     {
       "handle": "filesystem"
