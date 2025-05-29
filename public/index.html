@@ -13,62 +13,40 @@
     />
     <link href="style.css" rel="stylesheet" />
   </head>
-  <body class="min-h-screen bg-steam-blue text-white font-['Inter']">
-    <div class="container mx-auto px-4 py-8">
-      <header class="text-center mb-12 animate-fade-in">
-        <h1 class="text-4xl font-bold mb-4 text-steam-accent">
-          Steam Game Discovery
-        </h1>
-        <p class="text-gray-300">
-          Find your next favorite game from the Steam library
-        </p>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Steam Game Discovery</h1>
+        <p>Find your next favorite game from the Steam library</p>
       </header>
 
-      <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
+      <div class="button-container">
         <button id="get-game" class="btn-primary">Get Random Game</button>
         <button id="get-all-games" class="btn-secondary">
           Browse All Games
         </button>
       </div>
 
-      <div class="mb-8 hidden" id="search-container">
-        <div class="max-w-md mx-auto">
-          <input
-            type="text"
-            id="search-games"
-            placeholder="Search games..."
-            class="w-full px-4 py-2 rounded-lg bg-steam-light text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-steam-accent"
-          />
-        </div>
+      <div class="search-container hidden" id="search-container">
+        <input type="text" id="search-games" placeholder="Search games..." />
       </div>
 
-      <div id="loading" class="hidden text-center py-8">
-        <div
-          class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-steam-accent border-t-transparent"
-        ></div>
-        <p class="mt-2 text-gray-300">Loading games...</p>
+      <div id="loading" class="loading hidden">
+        <div class="loading-spinner"></div>
+        <p>Loading games...</p>
       </div>
 
-      <div
-        id="error-message"
-        class="hidden text-center py-4 px-4 bg-red-500 bg-opacity-20 rounded-lg text-red-300 mb-4"
-      ></div>
+      <div id="error-message" class="error-message hidden"></div>
 
-      <div
-        id="random-game"
-        class="hidden max-w-md mx-auto mb-8 animate-slide-up"
-      >
-        <div class="game-card text-center">
-          <h2 class="text-xl font-semibold mb-2">Your Random Game</h2>
-          <p id="game-title" class="text-lg text-steam-accent"></p>
+      <div id="random-game" class="hidden">
+        <div class="game-card">
+          <h2>Your Random Game</h2>
+          <p id="game-title"></p>
         </div>
       </div>
 
       <div id="games-container" class="hidden">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-          id="games-grid"
-        ></div>
+        <div class="games-grid" id="games-grid"></div>
       </div>
     </div>
     <script src="main.js"></script>
