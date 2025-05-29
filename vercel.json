@@ -12,12 +12,19 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "app.js"
+    },
+    {
       "src": "/random-game",
       "dest": "app.js"
     },
     {
       "src": "/games",
       "dest": "app.js"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
