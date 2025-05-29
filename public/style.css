@@ -144,3 +144,94 @@ input:focus {
 .hidden {
   display: none;
 }
+
+.game-card.detailed {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.game-header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card.detailed:hover .game-image {
+  transform: scale(1.05);
+}
+
+.game-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.game-info h2 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.game-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.price-tag {
+  background-color: var(--steam-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.release-date {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.game-details {
+  padding: 1.5rem;
+  background-color: var(--steam-light);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: rgba(102, 192, 244, 0.1);
+  color: var(--steam-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}

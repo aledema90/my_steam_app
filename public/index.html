@@ -39,9 +39,29 @@
       <div id="error-message" class="error-message hidden"></div>
 
       <div id="random-game" class="hidden">
-        <div class="game-card">
-          <h2>Your Random Game</h2>
-          <p id="game-title"></p>
+        <div class="game-card detailed">
+          <div class="game-header">
+            <img
+              id="game-image"
+              src=""
+              alt="Game header image"
+              class="game-image"
+            />
+            <div class="game-info">
+              <h2 id="game-title"></h2>
+              <div class="game-meta">
+                <span id="game-price" class="price-tag"></span>
+                <span id="game-release" class="release-date"></span>
+              </div>
+            </div>
+          </div>
+          <div class="game-details">
+            <p id="game-description" class="description"></p>
+            <div class="game-tags">
+              <div id="game-categories" class="tags"></div>
+              <div id="game-genres" class="tags"></div>
+            </div>
+          </div>
         </div>
       </div>
 

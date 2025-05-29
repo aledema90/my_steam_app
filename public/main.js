@@ -40,6 +40,45 @@ const displayGames = (games) => {
   });
 };
 
+// Create tag elements
+const createTags = (tags, containerId) => {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+  tags.forEach((tag) => {
+    const tagElement = document.createElement("span");
+    tagElement.className = "tag";
+    tagElement.textContent = tag;
+    container.appendChild(tagElement);
+  });
+};
+
+// Display random game details
+const displayRandomGame = (game) => {
+  // Update game image
+  const gameImage = document.getElementById("game-image");
+  gameImage.src = game.header_image;
+  gameImage.alt = `${game.name} header image`;
+
+  // Update game title
+  document.getElementById("game-title").textContent = game.name;
+
+  // Update price and release date
+  document.getElementById("game-price").textContent = game.price;
+  document.getElementById("game-release").textContent = game.release_date;
+
+  // Update description
+  document.getElementById("game-description").textContent =
+    game.short_description;
+
+  // Update categories and genres
+  createTags(game.categories, "game-categories");
+  createTags(game.genres, "game-genres");
+
+  // Show the game card
+  hideElement("loading");
+  showElement("random-game");
+};
+
 // Get random game
 document.getElementById("get-game").addEventListener("click", async () => {
   try {
@@ -52,12 +91,7 @@ document.getElementById("get-game").addEventListener("click", async () => {
     if (!response.ok) throw new Error("Failed to fetch random game");
 
     const game = await response.json();
-    const gameTitle = document.getElementById("game-title");
-    const randomGameContainer = document.getElementById("random-game");
-
-    gameTitle.textContent = game.name;
-    hideElement("loading");
-    showElement("random-game");
+    displayRandomGame(game);
   } catch (error) {
     hideElement("loading");
     showError("Failed to fetch random game. Please try again.");
